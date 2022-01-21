@@ -65,7 +65,7 @@
       }
       /*=============== Main ===============*/
       .main {
-        height: 98vh;
+        height: calc(100vh - 3.6rem);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -85,9 +85,6 @@
         border-radius: 8px;
       }
       .card__img-hover {
-        display: none;
-      }
-      .card__img-container:hover .card__img-hover {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -98,6 +95,11 @@
         position: absolute;
         top: 0;
         left: 0;
+        opacity: 0;
+        transition: all 0.3s ease-out;
+      }
+      .card__img-container:hover .card__img-hover {
+        opacity: 1;
       }
       .card__title {
         font-size: var(--big-font);
@@ -162,15 +164,21 @@
       }
       .card__link:hover {
         color: var(--cyan);
+        transition: all 0.2s ease-out;
       }
       /*========== Atrtribution ==========*/
       .attribution {
-        font-size: 11px;
+        font-size: 16px;
         text-align: center;
         color: white;
+        padding: 0.8rem;
       }
-      .attribution a {
-        color: hsl(228, 45%, 44%);
+      .attribution__paragraph {
+        color: var(--soft-blue);
+      }
+      .card__link--attribution {
+        color: var(--white);
+        text-decoration: none;
       }
     </style>
   </head>
@@ -235,10 +243,20 @@
       </div>
     </main>
     <div class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
-        >Frontend Mentor</a
-      >. Coded by <a href="https://github.com/roguesquid">Luis Martin</a>.
+      <p class="attribution__paragraph">
+        Challenge by
+        <a
+          class="card__link card__link--attribution"
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a
+          class="card__link card__link--attribution"
+          href="https://github.com/roguesquid"
+          >Luis Martin</a
+        >.
+      </p>
     </div>
   </body>
 </html>
