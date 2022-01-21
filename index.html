@@ -19,7 +19,6 @@
 
     <title>Frontend Mentor | NFT preview card component</title>
 
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
     <style>
       /*========== Variables ==========*/
       :root {
@@ -59,9 +58,14 @@
       body {
         background-color: var(--very-dark-blue-main-bg);
       }
+      img,
+      svg {
+        display: block;
+        overflow: hidden;
+      }
       /*=============== Main ===============*/
       .main {
-        height: 100vh;
+        height: 98vh;
         display: flex;
         justify-content: center;
         align-items: center;
@@ -72,15 +76,36 @@
         border-radius: 16px;
         padding: 2.4rem;
       }
+      .card__img-container {
+        margin-bottom: 2.4rem;
+        position: relative;
+      }
       .card__img {
         width: 30.2rem;
-        margin-bottom: 2.4rem;
         border-radius: 8px;
+      }
+      .card__img-hover {
+        display: none;
+      }
+      .card__img-container:hover .card__img-hover {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 30.2rem;
+        height: 30.2rem;
+        background-color: hsla(178, 100%, 50%, 0.5);
+        border-radius: 8px;
+        position: absolute;
+        top: 0;
+        left: 0;
       }
       .card__title {
         font-size: var(--big-font);
         color: var(--white);
         margin-bottom: 1.6rem;
+        text-decoration: none;
+        display: block;
+        font-weight: var(--semibold-font);
       }
       .card__description {
         color: var(--soft-blue);
@@ -118,7 +143,7 @@
       .card__author-container {
         display: flex;
         align-items: center;
-        margin-bottom: 0.8rem;
+        /* margin-bottom: 0.8rem; */
       }
       .card__author-img {
         width: 3.2rem;
@@ -131,13 +156,18 @@
         font-weight: var(--light-font);
         font-size: var(--small-font);
       }
-      .card__author-content--color {
+      .card__author-content-link {
         color: var(--white);
+        text-decoration: none;
+      }
+      .card__link:hover {
+        color: var(--cyan);
       }
       /*========== Atrtribution ==========*/
       .attribution {
         font-size: 11px;
         text-align: center;
+        color: white;
       }
       .attribution a {
         color: hsl(228, 45%, 44%);
@@ -147,12 +177,23 @@
   <body>
     <main class="main">
       <div class="card">
-        <img
-          class="card__img"
-          src="./images/image-equilibrium.jpg"
-          alt="equilibrium"
-        />
-        <h3 class="card__title">Equilibrium #3429</h3>
+        <a href="" class="card__img-link">
+          <figure class="card__img-container">
+            <img
+              class="card__img"
+              src="./images/image-equilibrium.jpg"
+              alt="equilibrium"
+            />
+            <div class="card__img-hover">
+              <img
+                class="card__img-hover-icon"
+                src="./images/icon-view.svg"
+                alt="view"
+              />
+            </div>
+          </figure>
+        </a>
+        <a href="" class="card__title card__link">Equilibrium #3429</a>
         <p class="card__description">
           Our Equilibrium collection promotes <br />
           balance and calm.
@@ -184,10 +225,12 @@
             src="./images/image-avatar.png"
             alt="avatar"
           />
-          <p class="card__author-content">
-            Creation of
-            <span class="card__author-content--color">Jules Wyvern</span>
-          </p>
+          <span class="card__author-content"
+            >Creation of
+            <a class="card__author-content-link card__link" href=""
+              >Jules Wyvern</a
+            ></span
+          >
         </div>
       </div>
     </main>
@@ -195,7 +238,7 @@
       Challenge by
       <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
         >Frontend Mentor</a
-      >. Coded by <a href="#">Luis Martin</a>.
+      >. Coded by <a href="https://github.com/roguesquid">Luis Martin</a>.
     </div>
   </body>
 </html>
