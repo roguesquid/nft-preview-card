@@ -49,7 +49,7 @@ I would like to keep learning frontend development, focusing on React.
 ### Useful resources
 
 - [Centering in CSS: A Complete Guide](https://css-tricks.com/centering-css-complete-guide/) - This helped me for centering the card.
-- [Display <div> or <span> over image on :hover in HTML](https://www.tutorialspoint.com/Display-div-or-span-over-image-on-hover-in-HTML) - This tutorial helped me for doing the hover effect over the image.
+- [Display div or span over image on :hover in HTML](https://www.tutorialspoint.com/Display-div-or-span-over-image-on-hover-in-HTML) - This tutorial helped me for doing the hover effect over the image.
 
 ## Author
 
